@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite de Aniversário Rock</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rock+Salt&family=Metal+Mania&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Metal Mania';
+            background: linear-gradient(45deg, #1a1a1a, #2d2d2d, #1a1a1a);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .invite-container {
+            width: 400px;
+            height: 600px;
+            position: relative;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255, 0, 0, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(138, 43, 226, 0.3) 0%, transparent 50%),
+                linear-gradient(135deg, #0f0f0f 0%, #2a2a2a 50%, #0f0f0f 100%);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 
+                0 0 30px rgba(255, 0, 0, 0.5),
+                inset 0 0 50px rgba(0, 0, 0, 0.8);
+            animation: rockPulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes rockPulse {
+            0%, 100% { box-shadow: 0 0 30px rgba(255, 0, 0, 0.5), inset 0 0 50px rgba(0, 0, 0, 0.8); }
+            50% { box-shadow: 0 0 50px rgba(255, 0, 0, 0.8), inset 0 0 50px rgba(0, 0, 0, 0.8); }
+        }
+        
+        .skull {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.1);
+            font-size: 30px;
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        .skull1 { top: 10%; left: 10%; animation-delay: 0s; }
+        .skull2 { top: 20%; right: 15%; animation-delay: 1s; }
+        .skull3 { bottom: 15%; left: 5%; animation-delay: 2s; }
+        .skull4 { bottom: 25%; right: 10%; animation-delay: 3s; }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(5deg); }
+        }
+        
+        .lightning {
+            position: absolute;
+            color: #ffff00;
+            font-size: 40px;
+            animation: flash 2s ease-in-out infinite;
+            text-shadow: 0 0 20px #ffff00;
+        }
+        
+        .lightning1 { top: 5%; left: 50%; animation-delay: 0s; }
+        .lightning2 { top: 70%; right: 20%; animation-delay: 1.5s; }
+        
+        @keyframes flash {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+        
+        .dino {
+            position: absolute;
+            color: rgba(34, 139, 34, 0.2);
+            font-size: 35px;
+            animation: stomp 3s ease-in-out infinite;
+        }
+        
+        .dino1 { bottom: 40%; left: 15%; animation-delay: 0s; }
+        .dino2 { top: 40%; right: 5%; animation-delay: 1.5s; }
+        
+        @keyframes stomp {
+            0%, 100% { transform: translateX(0px) scaleX(1); }
+            50% { transform: translateX(5px) scaleX(-1); }
+        }
+        
+        .photo-container {
+            position: absolute;
+            top: 180px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid #ff0000;
+            box-shadow: 
+                0 0 20px rgba(255, 0, 0, 0.8),
+                inset 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+        
+        .photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: contrast(1.1) saturate(1.1);
+        }
+        
+        .title {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ff0000;
+            font-family: 'Rock Salt';
+            font-size: 20px;
+            text-align: center;
+            text-shadow: 
+                2px 2px 4px #000,
+                0 0 10px #ff0000,
+                0 0 20px #ff0000;
+            line-height: 1.2;
+            width: 90%;
+            animation: titleGlow 2s ease-in-out infinite;
+        }
+        
+        @keyframes titleGlow {
+            0%, 100% { 
+                text-shadow: 
+                    3px 3px 0px #000,
+                    -1px -1px 0px #000,
+                    1px -1px 0px #000,
+                    -1px 1px 0px #000,
+                    0 0 15px #ff0000,
+                    0 0 25px #ff0000;
+            }
+            50% { 
+                text-shadow: 
+                    3px 3px 0px #000,
+                    -1px -1px 0px #000,
+                    1px -1px 0px #000,
+                    -1px 1px 0px #000,
+                    0 0 20px #ff0000,
+                    0 0 35px #ff0000;
+            }
+        }
+        
+        .details {
+            position: absolute;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 22px;
+            text-align: center;
+            text-shadow: 2px 2px 4px #000, 0 0 10px #fff;
+            line-height: 1.4;
+            width: 90%;
+        }
+        
+        .rock-border {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 3px solid transparent;
+            border-radius: 15px;
+            background: linear-gradient(45deg, #ff0000, #8a2be2, #ff0000) border-box;
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: subtract;
+            mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            mask-composite: subtract;
+        }
+        
+        .metal-texture {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                repeating-linear-gradient(
+                    90deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(255, 255, 255, 0.03) 2px,
+                    rgba(255, 255, 255, 0.03) 4px
+                ),
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(255, 255, 255, 0.03) 2px,
+                    rgba(255, 255, 255, 0.03) 4px
+                );
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="invite-container">
+        <div class="metal-texture"></div>
+        
+        <!-- Elementos decorativos de rock -->
+        <div class="skull skull1">💀</div>
+        <div class="skull skull2">💀</div>
+        <div class="skull skull3">💀</div>
+        <div class="skull skull4">💀</div>
+        
+        <div class="lightning lightning1">⚡</div>
+        <div class="lightning lightning2">⚡</div>
+        
+        <div class="dino dino1">🦕</div>
+        <div class="dino dino2">🦖</div>
+        
+        <div class="rock-border"></div>
+        
+        <div class="title">
+            VOCÊ ESTÁ CONVIDADO<br><br>
+
+            PRO MEU ANIVERSÁRIO
+        </div>
+        
+        <div class="photo-container">
+            <img src="https://lh3.googleusercontent.com/fife/ALs6j_G_SF91d8roRmYDajg9rzzk2LxVzD-lo-KErfBiPs2IXwZbU1Si0EYF8USYPN9GlIHU2fSw3s-zLPHze4GM3g1Jyj9KlSZvfT1ruekoeZmRIFPEHLGBl4jV3L9-zH3R-snYh086v6-dj1re7fG_sEU-uelJo6JwkQbjM5mteViGiLiNPaVOpGxucbsOeZQM76w9vB_wrBtaYBCgCQ4i1EkXw1LwDGuu4gjkyFZuXRRl3KYsL18GJBy0w4Km0MiS0O3Gj5to8eRvC-pFws29HjaOQPV_FCiQuiXfk0Hkk7jGbuxGhiz-h0DFLwxfa8rnPEEIcXWUx4LU9CKczSosRE86pyUAg5Zy3j6qEyAmUo317bmqQVxuBDZ1lSB3pfviGb-Zux9eac_2AltHswL8cDzGbfdTDAtm8piSbDxSXJQeq56_CmI3t9qO_4WmuDbrG9HBsA1c4sKM9tcjC2PqGmqyUaGbGa39lrNoHZJ7LkpuhfoKeOK0Y6y-ZT3IknXezA5uxfNzQkNLqGXrlo8qJitoSGS91dzzTh2PDLzAkCZUMtMGNXMgmDZKaM2H6thu8p9lCfLb0SGEYjTySu4OBcPNUvj4YBzImTth4cPspTeCJ4wg3SX-O1FaUZNpsZDGqL4rvLr2FVMFuatODqKgS1s32DwSlkk9wE_KGWU5NBOtG1aK6D2IaD42BEDD7jat7ApDkAzzcWHn2AnjPOMevFU5XFtMheoxL3NatWNM9owfIY9DActNMXUHXh7x3zQaN4kjKUGcAIlJmea_kwoerqxkyOBtR_0xCpOcJ0PLL_oPTogYhY2gjDhbGpzkD8jzZpp7OL1wjAJW6eylibGApXjlIYCnSOm6NEPkg7p2Cxr95rf5_9WIWpCVckOz-1d0ZLC_XPpMDe-1AGXXc2uUBYkoWzY4YtpBQH9snTPjpe36ZzdGSyEwUI4GEwBolLvP9gW6ao3gouevN9FbK8A9XN2Rwg=w1920-h945?auditContext=prefetch" alt="Sua foto" class="photo">
+        </div>
+        
+        <div class="details">
+            DIA: 13/9<br>
+            LOCAL: MINHA CASA<br>
+            TRAZER: O QUE FOR BEBER<br>
+        </div>
+    </div>
+</body>
+</html>
